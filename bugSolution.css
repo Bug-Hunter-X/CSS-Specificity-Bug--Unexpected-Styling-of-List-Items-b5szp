@@ -1,0 +1,29 @@
+The solution involves improving the specificity of the first selector. We need to ensure both selectors have equal or higher specificity than the `#myList > li:nth-child(2)` selector.
+
+One approach is to use the same specificity as the second selector. In this case we will change the first selector to `#myList > li:nth-child(1)`.
+
+```css
+#myList > li:nth-child(1){
+  color: blue;
+}
+
+#myList > li:nth-child(2) {
+  color: green;
+}
+
+```
+
+Another solution is to use a more specific selector, for instance, using the `:first-child` pseudo-class in conjunction with a parent selector. This would result in the following:
+
+```css
+#myList > li:first-child {
+  color: blue;
+}
+
+#myList > li:nth-child(2) {
+  color: green;
+}
+
+```
+
+This ensures that both list items are explicitly styled according to the intended rules, resolving the specificity conflict.
