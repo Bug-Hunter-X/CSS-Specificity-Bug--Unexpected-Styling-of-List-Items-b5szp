@@ -1,0 +1,14 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors. The goal is to style both list items, but only the second one is getting the correct style, while the first one remains with the default browser style.
+
+```css
+#myList li {
+  color: blue;
+}
+
+#myList > li:nth-child(2) {
+  color: green;
+}
+
+```
+
+The issue is due to the specificity of CSS selectors. The `#myList > li:nth-child(2)` selector is more specific than `#myList li` because it uses the child combinator and the `:nth-child` pseudo-class, effectively overriding the first rule for the second list item.
